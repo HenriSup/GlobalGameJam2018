@@ -1,4 +1,97 @@
 {
-  "nextEntryId": 0,
-  "nodes": []
+  "nextEntryId": 20,
+  "nodes": [
+    {
+      "id": "4",
+      "name": "Scenes",
+      "type": null,
+      "children": [
+        {
+          "id": "0",
+          "name": "Game",
+          "type": "scene"
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "name": "Sprites",
+      "type": null,
+      "children": [
+        {
+          "id": "7",
+          "name": "Characters",
+          "type": null,
+          "children": [
+            {
+              "id": "12",
+              "name": "Character",
+              "type": "sprite"
+            },
+            {
+              "id": "15",
+              "name": "roueltteRider",
+              "type": "sprite"
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "name": "Background",
+          "type": null,
+          "children": [
+            {
+              "id": "9",
+              "name": "DebugBackground",
+              "type": "sprite"
+            },
+            {
+              "id": "11",
+              "name": "DebugPlateform",
+              "type": "sprite"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Behaviors",
+      "type": null,
+      "children": [
+        {
+          "id": "19",
+          "name": "GameManager",
+          "type": "script"
+        },
+        {
+          "id": "13",
+          "name": "CharacterBehavior",
+          "type": "script"
+        },
+        {
+          "id": "17",
+          "name": "GroundBehavior",
+          "type": "script"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Prefabs",
+      "type": null,
+      "children": [
+        {
+          "id": "14",
+          "name": "Character",
+          "type": "scene"
+        },
+        {
+          "id": "16",
+          "name": "Ground",
+          "type": "scene"
+        }
+      ]
+    }
+  ]
 }

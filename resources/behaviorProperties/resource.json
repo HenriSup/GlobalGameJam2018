@@ -1,3 +1,22 @@
 {
-  "behaviors": {}
+  "behaviors": {
+    "CharacterBehavior": {
+      "scriptId": "13",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "GroundBehavior": {
+      "scriptId": "17",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "GameManager": {
+      "scriptId": "19",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    }
+  }
 }

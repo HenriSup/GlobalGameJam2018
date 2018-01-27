@@ -1,0 +1,74 @@
+{
+  "formatVersion": 1,
+  "nodes": [
+    {
+      "id": "0",
+      "name": "Character",
+      "children": [],
+      "components": [
+        {
+          "type": "P2Body",
+          "config": {
+            "formatVersion": 2,
+            "mass": 1,
+            "fixedRotation": false,
+            "offsetX": 0,
+            "offsetY": 0,
+            "shape": "circle",
+            "width": 1,
+            "height": 1,
+            "angle": 0,
+            "radius": 0.25,
+            "length": 1
+          },
+          "id": "3"
+        },
+        {
+          "type": "SpriteRenderer",
+          "config": {
+            "formatVersion": 1,
+            "spriteAssetId": "15",
+            "animationId": null,
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
+            "overrideOpacity": false,
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
+          },
+          "id": "4"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "CharacterBehavior",
+            "propertyValues": {}
+          },
+          "id": "5"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    }
+  ]
+}
