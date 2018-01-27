@@ -13,12 +13,12 @@ class GameManager extends Sup.Behavior {
   
   addCharacter(character:Sup.Actor){
     this.characters.push(character);
-    Sup.log("Character has been added to the gameManager:"); 
+    //Sup.log("Character has been added to the gameManager:"); 
   }
   
   addGround(ground:Sup.Actor){
     this.grounds.push(ground);
-    Sup.log("Ground has been added to the gameManager:"); 
+    //Sup.log("Ground has been added to the gameManager:"); 
   }
   
   public isTouchingGround(testBody:p2.Body):boolean{

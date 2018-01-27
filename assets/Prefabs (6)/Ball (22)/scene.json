@@ -1,0 +1,66 @@
+{
+  "formatVersion": 1,
+  "nodes": [
+    {
+      "id": "0",
+      "name": "Ball",
+      "children": [],
+      "components": [
+        {
+          "type": "SpriteRenderer",
+          "config": {
+            "formatVersion": 1,
+            "spriteAssetId": "23",
+            "animationId": null,
+            "horizontalFlip": false,
+            "verticalFlip": false,
+            "castShadow": false,
+            "receiveShadow": false,
+            "color": "ffffff",
+            "overrideOpacity": false,
+            "opacity": null,
+            "materialType": "basic",
+            "shaderAssetId": null
+          },
+          "id": "0"
+        },
+        {
+          "type": "P2Body",
+          "config": {
+            "formatVersion": 2,
+            "mass": 1,
+            "fixedRotation": false,
+            "offsetX": 0,
+            "offsetY": 0,
+            "shape": "box",
+            "width": 1,
+            "height": 1,
+            "angle": 0,
+            "radius": 0.1,
+            "length": 1
+          },
+          "id": "1"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    }
+  ]
+}

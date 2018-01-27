@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 20,
+  "nextEntryId": 50,
   "nodes": [
     {
       "id": "4",
@@ -24,13 +24,35 @@
           "type": null,
           "children": [
             {
-              "id": "12",
-              "name": "Character",
+              "id": "15",
+              "name": "Roue",
               "type": "sprite"
             },
             {
-              "id": "15",
-              "name": "roueltteRider",
+              "id": "30",
+              "name": "Medic",
+              "type": "sprite"
+            },
+            {
+              "id": "46",
+              "name": "Sprite",
+              "type": "sprite"
+            },
+            {
+              "id": "47",
+              "name": "Orange",
+              "type": "sprite"
+            }
+          ]
+        },
+        {
+          "id": "48",
+          "name": "Gun",
+          "type": null,
+          "children": [
+            {
+              "id": "49",
+              "name": "OrangeGun",
               "type": "sprite"
             }
           ]
@@ -41,13 +63,57 @@
           "type": null,
           "children": [
             {
-              "id": "9",
-              "name": "DebugBackground",
+              "id": "28",
+              "name": "CollisionLayer",
               "type": "sprite"
             },
             {
-              "id": "11",
-              "name": "DebugPlateform",
+              "id": "31",
+              "name": "Debug",
+              "type": null,
+              "children": [
+                {
+                  "id": "9",
+                  "name": "DebugBackground",
+                  "type": "sprite"
+                },
+                {
+                  "id": "11",
+                  "name": "DebugPlateform",
+                  "type": "sprite"
+                },
+                {
+                  "id": "44",
+                  "name": "Ground",
+                  "type": "sprite"
+                },
+                {
+                  "id": "45",
+                  "name": "FondRouge",
+                  "type": "sprite"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "20",
+          "name": "Obects",
+          "type": null,
+          "children": [
+            {
+              "id": "21",
+              "name": "Gun",
+              "type": "sprite"
+            },
+            {
+              "id": "23",
+              "name": "Ball",
+              "type": "sprite"
+            },
+            {
+              "id": "24",
+              "name": "Muzzle",
               "type": "sprite"
             }
           ]
@@ -87,8 +153,25 @@
           "type": "scene"
         },
         {
-          "id": "16",
-          "name": "Ground",
+          "id": "22",
+          "name": "Ball",
+          "type": "scene"
+        },
+        {
+          "id": "25",
+          "name": "Grounds",
+          "type": null,
+          "children": [
+            {
+              "id": "16",
+              "name": "Ground",
+              "type": "scene"
+            }
+          ]
+        },
+        {
+          "id": "41",
+          "name": "Map",
           "type": "scene"
         }
       ]

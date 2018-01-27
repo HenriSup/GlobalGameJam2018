@@ -2,41 +2,7 @@
   "formatVersion": 1,
   "nodes": [
     {
-      "id": "12",
-      "name": "GameManager",
-      "children": [],
-      "components": [
-        {
-          "type": "Behavior",
-          "config": {
-            "behaviorName": "GameManager",
-            "propertyValues": {}
-          },
-          "id": "0"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
-      "id": "1",
+      "id": "16",
       "name": "Camera",
       "children": [],
       "components": [
@@ -46,7 +12,7 @@
             "formatVersion": 1,
             "mode": "orthographic",
             "fov": 45,
-            "orthographicScale": 10,
+            "orthographicScale": 7.2,
             "viewport": {
               "x": 0,
               "y": 0,
@@ -81,25 +47,15 @@
       "prefab": null
     },
     {
-      "id": "0",
-      "name": "Background",
+      "id": "12",
+      "name": "GameManager",
       "children": [],
       "components": [
         {
-          "type": "SpriteRenderer",
+          "type": "Behavior",
           "config": {
-            "formatVersion": 1,
-            "spriteAssetId": "9",
-            "animationId": null,
-            "horizontalFlip": false,
-            "verticalFlip": false,
-            "castShadow": false,
-            "receiveShadow": false,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null,
-            "materialType": "basic",
-            "shaderAssetId": null
+            "behaviorName": "GameManager",
+            "propertyValues": {}
           },
           "id": "0"
         }
@@ -152,14 +108,14 @@
       }
     },
     {
-      "id": "11",
-      "name": "Ground",
+      "id": "18",
+      "name": "Map",
       "children": [],
       "components": [],
       "position": {
-        "x": -0.251,
-        "y": -5.198,
-        "z": 1
+        "x": 0,
+        "y": 0,
+        "z": 0
       },
       "orientation": {
         "x": 0,
@@ -173,36 +129,9 @@
         "z": 1
       },
       "visible": true,
-      "layer": 1,
+      "layer": 0,
       "prefab": {
-        "sceneAssetId": "16"
-      }
-    },
-    {
-      "id": "10",
-      "name": "Ground",
-      "children": [],
-      "components": [],
-      "position": {
-        "x": 7.186,
-        "y": -2.571,
-        "z": 1
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0.3826834323650898,
-        "w": 0.9238795325112867
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 1,
-      "prefab": {
-        "sceneAssetId": "16"
+        "sceneAssetId": "41"
       }
     }
   ]
