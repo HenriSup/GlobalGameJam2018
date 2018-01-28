@@ -15,7 +15,7 @@
               "config": {
                 "formatVersion": 1,
                 "spriteAssetId": "47",
-                "animationId": "",
+                "animationId": null,
                 "horizontalFlip": false,
                 "verticalFlip": false,
                 "castShadow": false,
@@ -70,7 +70,7 @@
                     "receiveShadow": false,
                     "color": "ffffff",
                     "overrideOpacity": true,
-                    "opacity": 0,
+                    "opacity": 1,
                     "materialType": "basic",
                     "shaderAssetId": null
                   },
@@ -80,7 +80,7 @@
               "position": {
                 "x": 0.2,
                 "y": 0,
-                "z": 1
+                "z": 0
               },
               "orientation": {
                 "x": 0,
@@ -93,7 +93,7 @@
                 "y": 1,
                 "z": 1
               },
-              "visible": true,
+              "visible": false,
               "layer": 0,
               "prefab": null
             }
@@ -169,7 +169,7 @@
       "position": {
         "x": 0,
         "y": 0,
-        "z": 0
+        "z": 4
       },
       "orientation": {
         "x": 0,

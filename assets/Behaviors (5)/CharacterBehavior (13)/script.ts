@@ -7,7 +7,7 @@ class CharacterBehavior extends Sup.Behavior {
   private jumpSpeed = 10*1000;
   private canJump = false;
   private gunActor:Sup.Actor;
-  private ballSpeed:number = 1000;
+  private ballSpeed:number = 100;
   
   awake() {
     Sup.getActor("GameManager").getBehavior(GameManager).addCharacter(this.actor);
@@ -49,11 +49,11 @@ class CharacterBehavior extends Sup.Behavior {
       
       ball.p2Body.body.position = [muzzlePosition.x,muzzlePosition.y,muzzlePosition.z];
       
-      let x = Math.cos(anglePad)*this.ballSpeed;
-      let y = Math.sin(anglePad)*this.ballSpeed;
+      let x = Math.cos(this.gunActor.getEulerZ())*this.ballSpeed;
+      let y = Math.sin(this.gunActor.getEulerZ())*this.ballSpeed;
       
       ball.p2Body.body.applyForce([x,y],[0,0]);
-      
+      Sup.log(muzzlePosition.z,ball.getPosition().z);
       // ball.p2Body.
     }
     
@@ -130,7 +130,6 @@ class CharacterBehavior extends Sup.Behavior {
     let angleDegre = angle * 180.0 / Math.PI;
     if( angleDegre < 0 ) angleDegre += 360.0;
     
-    Sup.log(angleDegre);
     
     if ( ((angleDegre > 0) && (angleDegre < 90)) || ((angleDegre > 270) && (angleDegre < 360)) ) {
       gunSpriteRenderer.setVerticalFlip(false);

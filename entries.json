@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 50,
+  "nextEntryId": 67,
   "nodes": [
     {
       "id": "4",
@@ -35,7 +35,7 @@
             },
             {
               "id": "46",
-              "name": "Sprite",
+              "name": "coeur",
               "type": "sprite"
             },
             {
@@ -63,11 +63,6 @@
           "type": null,
           "children": [
             {
-              "id": "28",
-              "name": "CollisionLayer",
-              "type": "sprite"
-            },
-            {
               "id": "31",
               "name": "Debug",
               "type": null,
@@ -90,6 +85,68 @@
                 {
                   "id": "45",
                   "name": "FondRouge",
+                  "type": "sprite"
+                }
+              ]
+            },
+            {
+              "id": "50",
+              "name": "MAP",
+              "type": null,
+              "children": [
+                {
+                  "id": "51",
+                  "name": "Couche 1",
+                  "type": "sprite"
+                },
+                {
+                  "id": "52",
+                  "name": "Couche 2",
+                  "type": "sprite"
+                },
+                {
+                  "id": "54",
+                  "name": "Couche 3",
+                  "type": "sprite"
+                },
+                {
+                  "id": "55",
+                  "name": "Couche 4",
+                  "type": "sprite"
+                },
+                {
+                  "id": "56",
+                  "name": "Couche 5",
+                  "type": "sprite"
+                },
+                {
+                  "id": "57",
+                  "name": "Couche 6",
+                  "type": "sprite"
+                },
+                {
+                  "id": "58",
+                  "name": "Couche 7",
+                  "type": "sprite"
+                },
+                {
+                  "id": "59",
+                  "name": "Couche 8",
+                  "type": "sprite"
+                },
+                {
+                  "id": "60",
+                  "name": "Couche 9",
+                  "type": "sprite"
+                },
+                {
+                  "id": "61",
+                  "name": "Couche 10",
+                  "type": "sprite"
+                },
+                {
+                  "id": "63",
+                  "name": "Couche 11",
                   "type": "sprite"
                 }
               ]
