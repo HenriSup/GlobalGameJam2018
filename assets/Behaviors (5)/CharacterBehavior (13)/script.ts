@@ -13,6 +13,7 @@ class CharacterBehavior extends Sup.Behavior {
     Sup.getActor("GameManager").getBehavior(GameManager).addCharacter(this.actor);
     this.characterBody = this.actor.p2Body.body;
     this.gunActor = this.actor.getChild("Weapon");
+    this.gunActor.setEulerZ(0.1);
   }
 
   update() {
@@ -64,6 +65,7 @@ class CharacterBehavior extends Sup.Behavior {
     
     this.characterBody.velocity = [leftStickX*this.moveSpeed,velocity.y];
     this.animate(this.characterBody.velocity,jumped,isTouchingGround);
+    this.animateGun();
     
   }
   
@@ -73,7 +75,6 @@ class CharacterBehavior extends Sup.Behavior {
     
     let characterSpriteRenderer:Sup.SpriteRenderer = this.actor.getChild("Sprite").spriteRenderer;
     let actualAnimation:string = characterSpriteRenderer.getAnimation();
-    Sup.log(actualAnimation);
     
     let frameCount:number = characterSpriteRenderer.getAnimationFrameCount();
     let frameIndex:number = characterSpriteRenderer.getAnimationFrameIndex();
@@ -120,6 +121,28 @@ class CharacterBehavior extends Sup.Behavior {
     }
    
     
+    
+  }
+  
+  animateGun(){
+    let angle = this.gunActor.getEulerZ();
+    let gunSpriteRenderer = this.gunActor.spriteRenderer;
+    let angleDegre = angle * 180.0 / Math.PI;
+    if( angleDegre < 0 ) angleDegre += 360.0;
+    
+    Sup.log(angleDegre);
+    
+    if ( ((angleDegre > 0) && (angleDegre < 90)) || ((angleDegre > 270) && (angleDegre < 360)) ) {
+      gunSpriteRenderer.setVerticalFlip(false);
+    } else {
+      gunSpriteRenderer.setVerticalFlip(true);
+    }
+    
+    if (((angleDegre > 150) && ((angleDegre < 360))) || (angleDegre < 30 && angleDegre > 0)){
+      this.gunActor.setLocalZ(0.1);
+    } else {
+      this.gunActor.setLocalZ(-0.1);
+    }
     
   }
   
