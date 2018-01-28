@@ -6,19 +6,55 @@
   "filtering": "pixelated",
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 100,
-  "framesPerSecond": 10,
+  "framesPerSecond": 14,
   "opacity": null,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 50,
-    "height": 50
+    "width": 23,
+    "height": 26
   },
   "origin": {
-    "x": 0.5,
+    "x": 0.3,
     "y": 0.5
   },
-  "animations": [],
+  "animations": [
+    {
+      "id": "0",
+      "name": "Idle",
+      "startFrameIndex": 0,
+      "endFrameIndex": 6,
+      "speed": 1
+    },
+    {
+      "id": "1",
+      "name": "Run",
+      "startFrameIndex": 8,
+      "endFrameIndex": 11,
+      "speed": 1
+    },
+    {
+      "id": "2",
+      "name": "Jump",
+      "startFrameIndex": 16,
+      "endFrameIndex": 19,
+      "speed": 1
+    },
+    {
+      "id": "3",
+      "name": "GoingUp",
+      "startFrameIndex": 20,
+      "endFrameIndex": 21,
+      "speed": 1
+    },
+    {
+      "id": "4",
+      "name": "GoingDown",
+      "startFrameIndex": 22,
+      "endFrameIndex": 23,
+      "speed": 0.8
+    }
+  ],
   "mapSlots": {
     "map": "map",
     "light": null,

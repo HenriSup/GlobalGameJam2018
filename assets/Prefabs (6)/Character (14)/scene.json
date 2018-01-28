@@ -15,7 +15,7 @@
               "config": {
                 "formatVersion": 1,
                 "spriteAssetId": "47",
-                "animationId": null,
+                "animationId": "",
                 "horizontalFlip": false,
                 "verticalFlip": false,
                 "castShadow": false,
@@ -31,7 +31,7 @@
           ],
           "position": {
             "x": 0,
-            "y": -0.08,
+            "y": -0.04,
             "z": 0
           },
           "orientation": {

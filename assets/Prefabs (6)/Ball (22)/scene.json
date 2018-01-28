@@ -32,7 +32,7 @@
             "fixedRotation": false,
             "offsetX": 0,
             "offsetY": 0,
-            "shape": "box",
+            "shape": "circle",
             "width": 1,
             "height": 1,
             "angle": 0,

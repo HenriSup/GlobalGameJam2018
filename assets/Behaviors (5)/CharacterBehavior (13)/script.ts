@@ -17,6 +17,7 @@ class CharacterBehavior extends Sup.Behavior {
 
   update() {
     let velocity:Sup.Math.Vector2 = new Sup.Math.Vector2(this.characterBody.velocity[0],this.characterBody.velocity[1]);
+    let isTouchingGround = this.GameManager.isTouchingGround(this.characterBody);
     this.canJump = this.GameManager.isTouchingGround(this.characterBody);
 
     let leftStickX = Sup.Input.getGamepadAxisValue(0,0);
@@ -55,13 +56,70 @@ class CharacterBehavior extends Sup.Behavior {
       // ball.p2Body.
     }
     
-    if(jumpButton && this.canJump){
-      Sup.log("jump et canjump");
+    let jumped = jumpButton && this.canJump;
+    
+    if(jumped){
       this.characterBody.applyForce([0,this.jumpSpeed],[0,0])
     }
     
     this.characterBody.velocity = [leftStickX*this.moveSpeed,velocity.y];
-
+    this.animate(this.characterBody.velocity,jumped,isTouchingGround);
+    
+  }
+  
+  animate(velocity,jumped,isTouchingGround){
+    let x = velocity[0];
+    let y = velocity[1];
+    
+    
+    let characterSpriteRenderer:Sup.SpriteRenderer = this.actor.getChild("Sprite").spriteRenderer;
+    let actualAnimation:string = characterSpriteRenderer.getAnimation();
+    Sup.log(actualAnimation);
+    
+    let frameCount:number = characterSpriteRenderer.getAnimationFrameCount();
+    let frameIndex:number = characterSpriteRenderer.getAnimationFrameIndex();
+    let lastFrameOfActualAnimation:boolean = frameIndex == (frameCount - 1);
+    
+    characterSpriteRenderer.setPlaybackSpeed(1);
+    
+    //-Retourne le sprite du perso en fonction de sa velocité en X
+    //-On check avant si c'est pas juste des mouvements de zoulettes pour pas qu'il se retourne
+    //  au moindre recentrage de joystick
+    if (Math.abs(x) > 0.1){
+      x>0 ? characterSpriteRenderer.setHorizontalFlip(false) : characterSpriteRenderer.setHorizontalFlip(true)
+    }
+    
+    //Si le perso tombe ou saute les animations de saut/envol/chute sont prioritaires
+    //Personne veut voir ton putain de perso marcher ou etre en idle dans les airs
+    
+    if(jumped){
+      characterSpriteRenderer.setAnimation("Jump",false);
+    } else {
+      if (!isTouchingGround){
+        //si c'est la fin d'anim de saut t'enchaine sur un going up
+        if(actualAnimation == "Jump" && lastFrameOfActualAnimation) {
+          characterSpriteRenderer.setAnimation("GoingUp",true);
+        } else {
+          if (y>0){
+            characterSpriteRenderer.setAnimation("GoingUp",true);
+          } else {
+            characterSpriteRenderer.setAnimation("GoingDown",true);
+          }
+        }
+      } else {
+        if ((Math.abs(x) > 0.1) && isTouchingGround) {
+          characterSpriteRenderer.setAnimation("Run",true);
+          
+          let leftStickX = Sup.Input.getGamepadAxisValue(0,0);
+          characterSpriteRenderer.setPlaybackSpeed(Math.abs(leftStickX));
+        } else {
+          characterSpriteRenderer.setAnimation("Idle",true);
+        }
+      }
+    //il saute pas, il vole/tombe pas? mets toi à l'aise anime sa course poto
+    }
+   
+    
     
   }
   
