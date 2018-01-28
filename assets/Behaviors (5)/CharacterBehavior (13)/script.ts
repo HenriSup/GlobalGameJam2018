@@ -71,7 +71,6 @@ class CharacterBehavior extends Sup.Behavior {
     let x = velocity[0];
     let y = velocity[1];
     
-    
     let characterSpriteRenderer:Sup.SpriteRenderer = this.actor.getChild("Sprite").spriteRenderer;
     let actualAnimation:string = characterSpriteRenderer.getAnimation();
     Sup.log(actualAnimation);
@@ -84,19 +83,18 @@ class CharacterBehavior extends Sup.Behavior {
     
     //-Retourne le sprite du perso en fonction de sa velocité en X
     //-On check avant si c'est pas juste des mouvements de zoulettes pour pas qu'il se retourne
-    //  au moindre recentrage de joystick
+    // au moindre recentrage de joystick
     if (Math.abs(x) > 0.1){
       x>0 ? characterSpriteRenderer.setHorizontalFlip(false) : characterSpriteRenderer.setHorizontalFlip(true)
     }
     
     //Si le perso tombe ou saute les animations de saut/envol/chute sont prioritaires
     //Personne veut voir ton putain de perso marcher ou etre en idle dans les airs
-    
     if(jumped){
       characterSpriteRenderer.setAnimation("Jump",false);
     } else {
       if (!isTouchingGround){
-        //si c'est la fin d'anim de saut t'enchaine sur un going up
+        //si c'est la fin d'anim de saut enchaine sur l'anim going up
         if(actualAnimation == "Jump" && lastFrameOfActualAnimation) {
           characterSpriteRenderer.setAnimation("GoingUp",true);
         } else {
@@ -107,16 +105,18 @@ class CharacterBehavior extends Sup.Behavior {
           }
         }
       } else {
+        //il saute pas, il vole/tombe pas? mets toi à l'aise anime sa course poto
         if ((Math.abs(x) > 0.1) && isTouchingGround) {
           characterSpriteRenderer.setAnimation("Run",true);
           
           let leftStickX = Sup.Input.getGamepadAxisValue(0,0);
           characterSpriteRenderer.setPlaybackSpeed(Math.abs(leftStickX));
+          
         } else {
           characterSpriteRenderer.setAnimation("Idle",true);
         }
       }
-    //il saute pas, il vole/tombe pas? mets toi à l'aise anime sa course poto
+
     }
    
     
