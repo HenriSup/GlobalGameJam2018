@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 67,
+  "nextEntryId": 86,
   "nodes": [
     {
       "id": "4",
@@ -148,6 +148,21 @@
                   "id": "63",
                   "name": "Couche 11",
                   "type": "sprite"
+                },
+                {
+                  "id": "68",
+                  "name": "fx hole",
+                  "type": "sprite"
+                },
+                {
+                  "id": "70",
+                  "name": "veines 3",
+                  "type": "sprite"
+                },
+                {
+                  "id": "80",
+                  "name": "NoiseEffect",
+                  "type": "sprite"
                 }
               ]
             }
@@ -171,6 +186,16 @@
             {
               "id": "24",
               "name": "Muzzle",
+              "type": "sprite"
+            },
+            {
+              "id": "81",
+              "name": "Laser",
+              "type": "sprite"
+            },
+            {
+              "id": "83",
+              "name": "Shield",
               "type": "sprite"
             }
           ]
@@ -196,6 +221,16 @@
           "id": "17",
           "name": "GroundBehavior",
           "type": "script"
+        },
+        {
+          "id": "69",
+          "name": "BackGroundBehavior",
+          "type": "script"
+        },
+        {
+          "id": "82",
+          "name": "LaserBehavior",
+          "type": "script"
         }
       ]
     },
@@ -207,6 +242,11 @@
         {
           "id": "14",
           "name": "Character",
+          "type": "scene"
+        },
+        {
+          "id": "85",
+          "name": "Character2",
           "type": "scene"
         },
         {
@@ -230,6 +270,62 @@
           "id": "41",
           "name": "Map",
           "type": "scene"
+        },
+        {
+          "id": "84",
+          "name": "Coeur",
+          "type": "scene"
+        }
+      ]
+    },
+    {
+      "id": "71",
+      "name": "Sons",
+      "type": null,
+      "children": [
+        {
+          "id": "72",
+          "name": "Music",
+          "type": null,
+          "children": [
+            {
+              "id": "74",
+              "name": "Robocoder",
+              "type": "sound"
+            },
+            {
+              "id": "75",
+              "name": "Biboubip",
+              "type": "sound"
+            },
+            {
+              "id": "76",
+              "name": "Trans-mission",
+              "type": "sound"
+            },
+            {
+              "id": "77",
+              "name": "Heartbeat",
+              "type": "sound"
+            }
+          ]
+        },
+        {
+          "id": "73",
+          "name": "Sound Effect",
+          "type": null,
+          "children": [
+            {
+              "id": "78",
+              "name": "Bleep",
+              "type": "sound"
+            },
+            {
+              "id": "79",
+              "name": "Tir",
+              "type": "sound"
+            }
+          ]
         }
       ]
     }

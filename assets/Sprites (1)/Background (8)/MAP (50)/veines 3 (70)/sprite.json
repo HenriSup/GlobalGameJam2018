@@ -6,27 +6,19 @@
   "filtering": "pixelated",
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 100,
-  "framesPerSecond": 11,
+  "framesPerSecond": 10,
   "opacity": null,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 184,
-    "height": 199
+    "width": 1280,
+    "height": 720
   },
   "origin": {
     "x": 0.5,
     "y": 0.5
   },
-  "animations": [
-    {
-      "id": "0",
-      "name": "battements",
-      "startFrameIndex": 0,
-      "endFrameIndex": 5,
-      "speed": 1
-    }
-  ],
+  "animations": [],
   "mapSlots": {
     "map": "map",
     "light": null,

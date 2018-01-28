@@ -4,7 +4,12 @@
       "scriptId": "13",
       "line": 0,
       "parentBehavior": null,
-      "properties": []
+      "properties": [
+        {
+          "name": "player",
+          "type": "number"
+        }
+      ]
     },
     "GroundBehavior": {
       "scriptId": "17",
@@ -14,6 +19,18 @@
     },
     "GameManager": {
       "scriptId": "19",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "BackGroundBehavior": {
+      "scriptId": "69",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": []
+    },
+    "LaserBehavior": {
+      "scriptId": "82",
       "line": 0,
       "parentBehavior": null,
       "properties": []

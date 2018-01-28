@@ -6,24 +6,38 @@
   "filtering": "pixelated",
   "wrapping": "clampToEdge",
   "pixelsPerUnit": 100,
-  "framesPerSecond": 11,
+  "framesPerSecond": 15,
   "opacity": null,
   "alphaTest": 0.1,
   "frameOrder": "rows",
   "grid": {
-    "width": 184,
-    "height": 199
+    "width": 16,
+    "height": 8
   },
   "origin": {
-    "x": 0.5,
+    "x": 0.65,
     "y": 0.5
   },
   "animations": [
     {
       "id": "0",
-      "name": "battements",
+      "name": "Start",
       "startFrameIndex": 0,
-      "endFrameIndex": 5,
+      "endFrameIndex": 2,
+      "speed": 1
+    },
+    {
+      "id": "1",
+      "name": "Run",
+      "startFrameIndex": 3,
+      "endFrameIndex": 3,
+      "speed": 1
+    },
+    {
+      "id": "2",
+      "name": "Trail",
+      "startFrameIndex": 4,
+      "endFrameIndex": 4,
       "speed": 1
     }
   ],

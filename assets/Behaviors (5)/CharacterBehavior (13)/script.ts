@@ -8,6 +8,9 @@ class CharacterBehavior extends Sup.Behavior {
   private canJump = false;
   private gunActor:Sup.Actor;
   private ballSpeed:number = 100;
+  private gunShot = [new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir")];
+  private lastshot = 0;
+  public player = 0;
   
   awake() {
     Sup.getActor("GameManager").getBehavior(GameManager).addCharacter(this.actor);
@@ -21,16 +24,16 @@ class CharacterBehavior extends Sup.Behavior {
     let isTouchingGround = this.GameManager.isTouchingGround(this.characterBody);
     this.canJump = this.GameManager.isTouchingGround(this.characterBody);
 
-    let leftStickX = Sup.Input.getGamepadAxisValue(0,0);
-    let leftStickY = -Sup.Input.getGamepadAxisValue(0,1);
+    let leftStickX = Sup.Input.getGamepadAxisValue(this.player,0);
+    let leftStickY = -Sup.Input.getGamepadAxisValue(this.player,1);
     
-    let rightStickX = Sup.Input.getGamepadAxisValue(0,2);
-    let rightStickY = -Sup.Input.getGamepadAxisValue(0,3);
+    let rightStickX = Sup.Input.getGamepadAxisValue(this.player,2);
+    let rightStickY = -Sup.Input.getGamepadAxisValue(this.player,3);
     let rightStickIdle = (Math.abs(rightStickX) < 0.1) && (Math.abs(rightStickY) < 0.1);
     
-    let jumpButton = Sup.Input.wasGamepadButtonJustPressed(0,0);
-    let fireButtonPressed = Sup.Input.wasGamepadButtonJustPressed(0,5);
-    let fireButtonDown= Sup.Input.isGamepadButtonDown(0,5);
+    let jumpButton = Sup.Input.wasGamepadButtonJustPressed(this.player,0);
+    let fireButtonPressed = Sup.Input.wasGamepadButtonJustPressed(this.player,5);
+    let fireButtonDown= Sup.Input.isGamepadButtonDown(this.player,5);
     
     let actualAngle = this.gunActor.getEulerZ();
     let anglePad = Math.atan2(rightStickY,rightStickX);
@@ -47,6 +50,11 @@ class CharacterBehavior extends Sup.Behavior {
       let muzzlePosition = this.actor.getChild("Weapon").getChild("Muzzle").getPosition();
       let ball = Sup.appendScene("Prefabs/Ball")[0];
       
+      this.gunShot[this.lastshot].play();
+      this.lastshot+=1;
+      if (this.lastshot>=this.gunShot.length) this.lastshot=0;
+      
+      ball.getBehavior(LaserBehavior).setAngle(lerpedAngle);
       ball.p2Body.body.position = [muzzlePosition.x,muzzlePosition.y,muzzlePosition.z];
       
       let x = Math.cos(this.gunActor.getEulerZ())*this.ballSpeed;
@@ -110,7 +118,7 @@ class CharacterBehavior extends Sup.Behavior {
         if ((Math.abs(x) > 0.1) && isTouchingGround) {
           characterSpriteRenderer.setAnimation("Run",true);
           
-          let leftStickX = Sup.Input.getGamepadAxisValue(0,0);
+          let leftStickX = Sup.Input.getGamepadAxisValue(this.player,0);
           characterSpriteRenderer.setPlaybackSpeed(Math.abs(leftStickX));
           
         } else {

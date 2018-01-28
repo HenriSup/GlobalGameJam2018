@@ -3,33 +3,60 @@
   "nodes": [
     {
       "id": "0",
-      "name": "Ball",
-      "children": [],
-      "components": [
+      "name": "Laser",
+      "children": [
         {
-          "type": "SpriteRenderer",
-          "config": {
-            "formatVersion": 1,
-            "spriteAssetId": "23",
-            "animationId": null,
-            "horizontalFlip": false,
-            "verticalFlip": false,
-            "castShadow": false,
-            "receiveShadow": false,
-            "color": "ffffff",
-            "overrideOpacity": false,
-            "opacity": null,
-            "materialType": "basic",
-            "shaderAssetId": null
+          "id": "1",
+          "name": "Sprite",
+          "children": [],
+          "components": [
+            {
+              "type": "SpriteRenderer",
+              "config": {
+                "formatVersion": 1,
+                "spriteAssetId": "81",
+                "animationId": "0",
+                "horizontalFlip": false,
+                "verticalFlip": false,
+                "castShadow": false,
+                "receiveShadow": false,
+                "color": "ffffff",
+                "overrideOpacity": false,
+                "opacity": null,
+                "materialType": "basic",
+                "shaderAssetId": null
+              },
+              "id": "0"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0,
+            "z": 0
           },
-          "id": "0"
-        },
+          "orientation": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "w": 1
+          },
+          "scale": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+          },
+          "visible": true,
+          "layer": 0,
+          "prefab": null
+        }
+      ],
+      "components": [
         {
           "type": "P2Body",
           "config": {
             "formatVersion": 2,
-            "mass": 1,
-            "fixedRotation": false,
+            "mass": 0,
+            "fixedRotation": true,
             "offsetX": 0,
             "offsetY": 0,
             "shape": "circle",
@@ -40,10 +67,18 @@
             "length": 1
           },
           "id": "1"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "LaserBehavior",
+            "propertyValues": {}
+          },
+          "id": "2"
         }
       ],
       "position": {
-        "x": 20,
+        "x": 200,
         "y": 0,
         "z": 5
       },
