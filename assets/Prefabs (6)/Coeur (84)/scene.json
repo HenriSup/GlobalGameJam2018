@@ -30,8 +30,8 @@
             }
           ],
           "position": {
-            "x": -0.076103575527668,
-            "y": 0.010537407360970974,
+            "x": -0.09054357558488846,
+            "y": 0,
             "z": 0
           },
           "orientation": {
@@ -112,6 +112,14 @@
             "shaderAssetId": null
           },
           "id": "0"
+        },
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "HeartBehavior",
+            "propertyValues": {}
+          },
+          "id": "1"
         }
       ],
       "position": {

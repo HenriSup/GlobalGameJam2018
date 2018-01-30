@@ -34,6 +34,41 @@
       "line": 0,
       "parentBehavior": null,
       "properties": []
+    },
+    "HeartBehavior": {
+      "scriptId": "86",
+      "line": 0,
+      "parentBehavior": null,
+      "properties": [
+        {
+          "name": "rotationSpeed",
+          "type": "number"
+        },
+        {
+          "name": "lerp",
+          "type": "number"
+        },
+        {
+          "name": "timeAbove",
+          "type": "number"
+        },
+        {
+          "name": "timeBeforeChange",
+          "type": "number"
+        },
+        {
+          "name": "randomLerp",
+          "type": "number"
+        },
+        {
+          "name": "sens",
+          "type": "number"
+        },
+        {
+          "name": "speed",
+          "type": "number"
+        }
+      ]
     }
   }
 }

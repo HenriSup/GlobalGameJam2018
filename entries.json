@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 86,
+  "nextEntryId": 87,
   "nodes": [
     {
       "id": "4",
@@ -230,6 +230,11 @@
         {
           "id": "82",
           "name": "LaserBehavior",
+          "type": "script"
+        },
+        {
+          "id": "86",
+          "name": "HeartBehavior",
           "type": "script"
         }
       ]
