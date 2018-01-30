@@ -32,7 +32,6 @@ class HeartBehavior extends Sup.Behavior {
     
     this.lerp = Math.max(this.lerp,-1);
     this.lerp = Math.min(this.lerp,1);
-    Sup.log(this.lerp);
    
     
     this.shields[0].setEulerZ(Sup.Math.lerp(this.shields[0].getEulerZ(),(this.shields[0].getEulerZ()+rotateValue),this.lerp));

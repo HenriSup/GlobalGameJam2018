@@ -4,7 +4,7 @@ class GameManager extends Sup.Behavior {
   public grounds:Sup.Actor[] = new Array<Sup.Actor>();
   
   awake() {
-    let sound = new Sup.Audio.SoundPlayer("Sons/Music/Heartbeat");
+    let sound = new Sup.Audio.SoundPlayer("Sons/Music/Heartbeat",0.8,{loop:true});
     sound.play();
     
   }

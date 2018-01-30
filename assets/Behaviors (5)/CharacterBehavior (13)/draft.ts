@@ -50,7 +50,7 @@ class CharacterBehavior extends Sup.Behavior {
     
     if(fireButtonPressed) {
       //TODO envoyer l'info au putain d'enfant et le laisser gerer son fireRate et l'instanciation
-      let gunPosition = this.actor.getChild("Weapon").getChild("Muzzle").getPosition();
+      let muzzlePosition = this.actor.getChild("Weapon").getChild("Muzzle").getPosition();
       let ball = Sup.appendScene("Prefabs/Ball")[0];
       
       this.gunShot[this.lastshot].play();
@@ -60,7 +60,7 @@ class CharacterBehavior extends Sup.Behavior {
       }
       
       ball.getBehavior(LaserBehavior).setAngle(this.gunActor.getEulerZ());
-      ball.p2Body.body.position = [gunPosition.x,gunPosition.y,gunPosition.z-0.01];
+      ball.p2Body.body.position = [muzzlePosition.x,muzzlePosition.y,muzzlePosition.z-];
       
       let x = Math.cos(this.gunActor.getEulerZ())*this.ballSpeed;
       let y = Math.sin(this.gunActor.getEulerZ())*this.ballSpeed;
