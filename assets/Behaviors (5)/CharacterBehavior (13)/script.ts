@@ -157,7 +157,7 @@ class CharacterBehavior extends Sup.Behavior {
   }
   
   initCharacter() {
-    let plateformBody = this.actor.getChild("Plateform").p2Body.body;
+    //let plateformBody = this.actor.getChild("Plateform").p2Body.body;
     //Ajout de "calques" regarder dans le putain de pocket
   }
   
