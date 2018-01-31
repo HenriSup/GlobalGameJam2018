@@ -1,5 +1,5 @@
 {
-  "nextEntryId": 87,
+  "nextEntryId": 88,
   "nodes": [
     {
       "id": "4",
@@ -256,17 +256,22 @@
         },
         {
           "id": "22",
-          "name": "Ball",
+          "name": "Laser",
           "type": "scene"
         },
         {
           "id": "25",
-          "name": "Grounds",
+          "name": "Plateforms",
           "type": null,
           "children": [
             {
               "id": "16",
               "name": "Ground",
+              "type": "scene"
+            },
+            {
+              "id": "87",
+              "name": "CharacterPlateform",
               "type": "scene"
             }
           ]

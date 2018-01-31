@@ -4,7 +4,7 @@ class LaserBehavior extends Sup.Behavior {
   private angle = 0;
   
   awake() {
-    
+    this.actor.p2Body.body.collisionResponse=false;
   }
 
   update() {

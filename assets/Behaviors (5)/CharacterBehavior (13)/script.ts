@@ -7,7 +7,7 @@ class CharacterBehavior extends Sup.Behavior {
   private jumpSpeed = 10*1000;
   private canJump = false;
   private gunActor:Sup.Actor;
-  private ballSpeed:number = 100;
+  private laserSpeed:number = 100;
   private gunShot = [new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir"),new Sup.Audio.SoundPlayer("Sons/Sound Effect/Tir")];
   private lastshot = 0;
   public player = 0;
@@ -20,6 +20,7 @@ class CharacterBehavior extends Sup.Behavior {
     this.gunShot.forEach((element)=>{
       element.setVolume(0.2);
     })
+    this.initCharacter();
   }
 
   update() {
@@ -35,7 +36,7 @@ class CharacterBehavior extends Sup.Behavior {
     let rightStickIdle = (Math.abs(rightStickX) < 0.1) && (Math.abs(rightStickY) < 0.1);
     
     let jumpButton = Sup.Input.wasGamepadButtonJustPressed(this.player,0);
-    let fireButtonPressed = Sup.Input.wasGamepadButtonJustPressed(this.player,5);
+    let fireButtonPressed = Sup.Input.wasGamepadButtonJustPressed(this.player,5) || Sup.Input.wasKeyJustPressed("I");
     let fireButtonDown= Sup.Input.isGamepadButtonDown(this.player,5);
     
     let actualAngle = this.gunActor.getEulerZ();
@@ -50,8 +51,8 @@ class CharacterBehavior extends Sup.Behavior {
     
     if(fireButtonPressed) {
       //TODO envoyer l'info au putain d'enfant et le laisser gerer son fireRate et l'instanciation
-      let gunPosition = this.actor.getChild("Weapon").getChild("Muzzle").getPosition();
-      let ball = Sup.appendScene("Prefabs/Ball")[0];
+      let muzzlePosition = this.actor.getChild("Weapon").getChild("Muzzle").getPosition();
+      let laser = Sup.appendScene("Prefabs/Laser")[0];
       
       this.gunShot[this.lastshot].play();
       this.lastshot+=1;
@@ -59,15 +60,13 @@ class CharacterBehavior extends Sup.Behavior {
         this.lastshot=0;
       }
       
-      ball.getBehavior(LaserBehavior).setAngle(this.gunActor.getEulerZ());
-      ball.p2Body.body.position = [gunPosition.x,gunPosition.y,gunPosition.z-0.01];
+      laser.getBehavior(LaserBehavior).setAngle(this.gunActor.getEulerZ());
+      laser.p2Body.body.position = [muzzlePosition.x,muzzlePosition.y,muzzlePosition.z];
       
-      let x = Math.cos(this.gunActor.getEulerZ())*this.ballSpeed;
-      let y = Math.sin(this.gunActor.getEulerZ())*this.ballSpeed;
+      let x = Math.cos(this.gunActor.getEulerZ())*this.laserSpeed;
+      let y = Math.sin(this.gunActor.getEulerZ())*this.laserSpeed;
       
-      ball.p2Body.body.applyForce([x,y],[0,0]);
-      //Sup.log(muzzlePosition.z,ball.getPosition().z);
-      // ball.p2Body.
+      laser.p2Body.body.applyForce([x,y],[0,0]);
     }
     
     let jumped = jumpButton && this.canJump;
@@ -130,11 +129,7 @@ class CharacterBehavior extends Sup.Behavior {
           characterSpriteRenderer.setAnimation("Idle",true);
         }
       }
-
     }
-   
-    
-    
   }
   
   animateGun(){
@@ -142,7 +137,6 @@ class CharacterBehavior extends Sup.Behavior {
     let gunSpriteRenderer = this.gunActor.spriteRenderer;
     let angleDegre = angle * 180.0 / Math.PI;
     if( angleDegre < 0 ) angleDegre += 360.0;
-    
     
     if ( ((angleDegre > 0) && (angleDegre < 90)) || ((angleDegre > 270) && (angleDegre < 360)) ) {
       gunSpriteRenderer.setVerticalFlip(false);
@@ -162,7 +156,10 @@ class CharacterBehavior extends Sup.Behavior {
     return Math.random() * (max - min) + min;
   }
   
-  
+  initCharacter() {
+    let plateformBody = this.actor.getChild("Plateform").p2Body.body;
+    //Ajout de "calques" regarder dans le putain de pocket
+  }
   
 }
 Sup.registerBehavior(CharacterBehavior);
