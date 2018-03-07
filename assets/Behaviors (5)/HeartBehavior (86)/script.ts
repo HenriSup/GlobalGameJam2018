@@ -1,5 +1,6 @@
 class HeartBehavior extends Sup.Behavior {
   
+  life = 100;
   shields:Sup.Actor[];
   rotationSpeed:number = 0;
   lerp = 0;
@@ -8,9 +9,13 @@ class HeartBehavior extends Sup.Behavior {
   randomLerp = 0.005;
   sens=1;
   speed=2;
+  private GameManager:Sup.Actor = null;
   
   awake() {
+    this.actor.p2Body.body.collisionResponse=false;
     this.shields = this.actor.getChildren();
+    this.GameManager=Sup.getActor("GameManager");
+    this.GameManager.getBehavior(GameManager).setBoss(this.actor);
   }
 
   update() {
@@ -43,6 +48,22 @@ class HeartBehavior extends Sup.Behavior {
   
   getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
+  }
+  
+  public getHit(damages:number){
+    this.life = this.life-damages;
+    Sup.log("Oups je l'ai touché dans l'coeur -",damages,"PV");
+    if (this.life<=0){
+      this.die();
+    }
+  }
+  
+  private die(){
+    Sup.log("Hearth is deaaaaaaaad OMG it's so sad mameeeeen")
+  }
+  
+  public getP2Body():p2.Body{
+    return this.actor.p2Body.body;
   }
 }
 Sup.registerBehavior(HeartBehavior);

@@ -2,9 +2,13 @@ class LaserBehavior extends Sup.Behavior {
   
   private moveSpeed = 10;
   private angle = 0;
-  
+  private gameManager:GameManager;
+  private life = 1;
+  private damages = 1;
   awake() {
     this.actor.p2Body.body.collisionResponse=false;
+    this.gameManager = Sup.getActor("GameManager").getBehavior(GameManager);
+    this.gameManager.addBullet(this.actor);
   }
 
   update() {
@@ -44,6 +48,22 @@ class LaserBehavior extends Sup.Behavior {
   
   public setAngle(angle){
     this.angle = angle;
+  }
+  
+  public getP2Body():p2.Body{
+    return this.actor.p2Body.body;
+  }
+  
+  public hit(actor:Sup.Actor){
+    this.life = this.life-1;
+    if (this.life<=0) {
+      this.gameManager.removeBullet(this.actor);
+      this.destroy();
+    }
+  }
+  
+  public getDamages(){
+    return this.damages;
   }
 }
 Sup.registerBehavior(LaserBehavior);

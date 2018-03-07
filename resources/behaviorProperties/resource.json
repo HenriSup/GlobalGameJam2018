@@ -41,6 +41,10 @@
       "parentBehavior": null,
       "properties": [
         {
+          "name": "life",
+          "type": "number"
+        },
+        {
           "name": "rotationSpeed",
           "type": "number"
         },

@@ -120,6 +120,23 @@
             "propertyValues": {}
           },
           "id": "1"
+        },
+        {
+          "type": "P2Body",
+          "config": {
+            "formatVersion": 2,
+            "mass": 0,
+            "fixedRotation": true,
+            "offsetX": -0.08,
+            "offsetY": 0.01,
+            "shape": "circle",
+            "width": 1,
+            "height": 1,
+            "angle": 0,
+            "radius": 0.6,
+            "length": 1
+          },
+          "id": "2"
         }
       ],
       "position": {

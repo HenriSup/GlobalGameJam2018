@@ -2,6 +2,40 @@
   "formatVersion": 1,
   "nodes": [
     {
+      "id": "12",
+      "name": "GameManager",
+      "children": [],
+      "components": [
+        {
+          "type": "Behavior",
+          "config": {
+            "behaviorName": "GameManager",
+            "propertyValues": {}
+          },
+          "id": "0"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "orientation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "visible": true,
+      "layer": 0,
+      "prefab": null
+    },
+    {
       "id": "16",
       "name": "Camera",
       "children": [],
@@ -47,47 +81,13 @@
       "prefab": null
     },
     {
-      "id": "12",
-      "name": "GameManager",
-      "children": [],
-      "components": [
-        {
-          "type": "Behavior",
-          "config": {
-            "behaviorName": "GameManager",
-            "propertyValues": {}
-          },
-          "id": "0"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 0,
-        "z": 0
-      },
-      "orientation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
-      },
-      "scale": {
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
-      "visible": true,
-      "layer": 0,
-      "prefab": null
-    },
-    {
       "id": "8",
       "name": "Character",
       "children": [],
       "components": [],
       "position": {
-        "x": -2.571,
-        "y": 3.963,
+        "x": -3,
+        "y": 4,
         "z": -0.5
       },
       "orientation": {
@@ -113,8 +113,8 @@
       "children": [],
       "components": [],
       "position": {
-        "x": 2.71,
-        "y": 4.972,
+        "x": 3,
+        "y": 4,
         "z": -0.5
       },
       "orientation": {
